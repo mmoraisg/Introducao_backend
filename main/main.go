@@ -39,4 +39,10 @@ func main() {
 	deleteQuery.Exec(2)
 
 	fmt.Println("Aluno com ID 2 removido com sucesso.")
+
+	deleteQuery, _:=database.Prepare("DELETE FROM aluno WHERE id = $1")
+
+	deleteQuery.Exec(2)
+
+	fmt.Println("Aluno com ID 2 removido com sucesso.")
 }
